@@ -2,6 +2,9 @@ package com.putopug.combat7.init.items;
 
 import com.putopug.combat7.combat7;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemTier;
+import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,4 +19,10 @@ public class ItemRegistryHandler {
 
     //Items
     public static final RegistryObject<Item> FUNKY_GEM = ITEMS.register("funky_gem", ItemBase::new);
+
+    //SWORDDEL
+    public static final RegistryObject<SwordItem> FUNKY_SWORD = ITEMS.register("funky_sword", () ->
+            new SwordItem(ItemTier.NETHERITE, 10000, 0.0F, new Item.Properties().group(ItemGroup.REDSTONE)));
+    public static final RegistryObject<SwordItem> FUNfgbKY_SWORD = ITEMS.register("funkydgb_sword", () ->
+            new SwordItem(ItemTier.NETHERITE, 100, 0.0F, new Item.Properties().group(ItemGroup.REDSTONE)));
 }
