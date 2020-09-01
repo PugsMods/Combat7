@@ -1,6 +1,8 @@
 package com.putopug.combat7;
 
+import com.putopug.combat7.init.blocks.BlockRegistryHandler;
 import com.putopug.combat7.init.items.ItemRegistryHandler;
+import com.putopug.combat7.init.items.ToolRegistryHandler;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -23,9 +25,10 @@ public class combat7
 
     public combat7()
     {
-
+        //Item Registring
         ItemRegistryHandler.init();
-
+        ToolRegistryHandler.init();
+        BlockRegistryHandler.init();
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
