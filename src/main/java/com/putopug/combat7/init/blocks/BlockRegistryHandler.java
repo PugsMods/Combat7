@@ -24,9 +24,11 @@ public class BlockRegistryHandler {
 
     //BLOCKS
     public static final RegistryObject<Block> FUNKY_BLOCK = BLOCKS.register("funky_block", FunkyBlock::new);
+    public static final RegistryObject<Block> POOP_BLOCK = BLOCKS.register("poop_ruthikispoop", FunkyBlock::new);
 
 
 
     //BLOCK ITEMS
     public static final RegistryObject<Item> FUNKY_BLOCK_ITEM = ITEMS.register("funky_block", () -> new BlockItemBase(FUNKY_BLOCK.get()));
+    public static final RegistryObject<Item> POOP_BLOCK_ITEM = ITEMS.register("poop_ruthikispoop", () -> new BlockItemBase(POOP_BLOCK.get()));
 }

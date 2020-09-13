@@ -1,6 +1,7 @@
 package com.putopug.combat7.init.items;
 
 import com.putopug.combat7.combat7;
+import com.putopug.combat7.init.itemGroups;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemTier;
@@ -19,7 +20,7 @@ public class ToolRegistryHandler {
 
     //SWORDDEL
     public static final RegistryObject<SwordItem> FUNKY_SWORD = ITEMS.register("funky_sword", () ->
-            new SwordItem(ItemTier.NETHERITE, 10000, 0.0F, new Item.Properties().group(ItemGroup.REDSTONE)));
+            new SwordItem(ItemTier.NETHERITE, 10000, 0.0F, new Item.Properties().group(itemGroups.TOOLS)));
     public static final RegistryObject<SwordItem> FUNfgbKY_SWORD = ITEMS.register("funkydgb_sword", () ->
-            new SwordItem(ItemTier.NETHERITE, 100, 0.0F, new Item.Properties().group(ItemGroup.REDSTONE)));
+            new SwordItem(ItemTier.NETHERITE, 100, 0.0F, new Item.Properties().group(itemGroups.TOOLS)));
 }
