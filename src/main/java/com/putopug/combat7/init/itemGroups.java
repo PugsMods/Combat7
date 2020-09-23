@@ -9,12 +9,12 @@ public class itemGroups {
         public ItemStack createIcon() {
             return new ItemStack(ItemRegistryHandler.FUNKY_GEM.get());
         }};
-        public static final net.minecraft.item.ItemGroup BLOCKS = new net.minecraft.item.ItemGroup("c7_tools") {
+        public static final net.minecraft.item.ItemGroup BLOCKS = new net.minecraft.item.ItemGroup("c7_blocks") {
             @Override
             public ItemStack createIcon() {
                 return new ItemStack(ItemRegistryHandler.FUNKY_GEM.get());
             }};
-        public static final net.minecraft.item.ItemGroup ITEMS = new net.minecraft.item.ItemGroup("c7_tools") {
+        public static final net.minecraft.item.ItemGroup ITEMS = new net.minecraft.item.ItemGroup("c7_items") {
            @Override
                 public ItemStack createIcon() {
                     return new ItemStack(ItemRegistryHandler.FUNKY_GEM.get());

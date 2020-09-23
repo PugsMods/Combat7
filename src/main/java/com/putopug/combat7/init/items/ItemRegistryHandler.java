@@ -1,8 +1,7 @@
 package com.putopug.combat7.init.items;
 
 import com.putopug.combat7.combat7;
-import com.putopug.combat7.init.itemGroups;
-import com.putopug.combat7.init.sound;
+import com.putopug.combat7.objects.items.SleepingBag;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -19,5 +18,6 @@ public class ItemRegistryHandler {
 
     //Items
     public static final RegistryObject<Item> FUNKY_GEM = ITEMS.register("funky_gem", ItemBase::new);
-    public static final RegistryObject<Item> PUG_LOVE = ITEMS.register("pug_disc", () -> new ModMusicDisc(5, sound.PUG_LOVE,new Item.Properties().group(itemGroups.ITEMS).maxStackSize(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<SleepingBag> GEM = ITEMS.register("gem", SleepingBag::new);
+
 }

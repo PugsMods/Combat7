@@ -20,6 +20,5 @@ public class SpeItmRegHand {
     }
 
     //Items
-    public static final RegistryObject<TestItem> TUMB = ITEMS.register("tumb", TestItem::new);
 
 }
