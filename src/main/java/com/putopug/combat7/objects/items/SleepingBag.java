@@ -10,6 +10,9 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+/*
+Author : PutoPug
+ */
 
 public class SleepingBag extends Item {
     public SleepingBag() {
@@ -19,9 +22,7 @@ public class SleepingBag extends Item {
 
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, ServerPlayerEntity serverPlayerEntity, Hand handIn) {
         // FIXME: 9/17/2020
-
         //Here I Go To bed & Cry Cause I Need Mappings
-
         // BTW It Is 3 AM For Me
         serverPlayerEntity.setBedPosition(BlockPos.ZERO);
         return super.onItemRightClick(worldIn, playerIn, handIn);

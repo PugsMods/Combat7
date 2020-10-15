@@ -2,6 +2,9 @@ package com.putopug.combat7.init;
 
 import com.putopug.combat7.init.items.ItemRegistryHandler;
 import net.minecraft.item.ItemStack;
+/*
+Author : PutoPug
+ */
 
 public class itemGroups {
     public static final net.minecraft.item.ItemGroup TOOLS = new net.minecraft.item.ItemGroup("c7_tools") {

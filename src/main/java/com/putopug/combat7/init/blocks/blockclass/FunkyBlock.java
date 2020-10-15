@@ -5,6 +5,9 @@ import net.minecraft.block.material.Material;
 import net.minecraftforge.common.ToolType;
 
 
+/*
+Author : PutoPug
+ */
 
 public class FunkyBlock extends Block {
     public FunkyBlock() {

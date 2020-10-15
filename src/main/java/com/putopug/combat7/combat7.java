@@ -5,6 +5,8 @@ import com.putopug.combat7.init.items.ItemRegistryHandler;
 import com.putopug.combat7.init.items.SpeItmRegHand;
 import com.putopug.combat7.init.items.ToolRegistryHandler;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.ComposterBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,6 +19,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod("combat7")
+/*
+Author : PutoPug
+ */
+
 public class combat7
 {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -47,6 +53,7 @@ public class combat7
 
     private void setup(final FMLCommonSetupEvent event)
     {
+        ComposterBlock.registerCompostable(100, Blocks.DIAMOND_BLOCK);
         // some preinit code
         LOGGER.warn("Thanks For Using Combat7");
     }
