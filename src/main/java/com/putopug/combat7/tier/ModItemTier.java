@@ -15,7 +15,7 @@ public enum ModItemTier implements IItemTier {
 
     LAPIS(2, 1795, 8.0F, 7.0F,20, () -> {return Ingredient.fromItems(Items.LAPIS_LAZULI);}),
     EMERALD(8, 3098, 8.0F, 10.0F,30, () -> {return Ingredient.fromItems(Items.EMERALD);}),
-    LEATHER(0, 15, 10.0F, 10.0F,0, () -> {return Ingredient.fromItems(Items.LEATHER);}),
+    //LEATHER(0, 15, 10.0F, 10.0F,0, () -> {return Ingredient.fromItems(Items.LEATHER);}),
     REDSTONE(4, 999, 9.0F, 7.0F,32, () -> {return Ingredient.fromItems(Items.REDSTONE);});
 
     private final int harvestLevel;

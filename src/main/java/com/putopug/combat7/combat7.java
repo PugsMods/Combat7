@@ -53,7 +53,7 @@ public class combat7
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        ComposterBlock.registerCompostable(100, Blocks.DIAMOND_BLOCK);
+        //ComposterBlock.registerCompostable(100, Blocks.DIAMOND_BLOCK);
         // some preinit code
         LOGGER.warn("Thanks For Using Combat7");
     }
