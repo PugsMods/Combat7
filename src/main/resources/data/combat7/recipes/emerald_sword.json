@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " L ",
+    " L ",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:sick"
+    },
+    "L": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "result": {
+    "item": "combat7:emerald_sword",
+    "count": 1
+  }
+}

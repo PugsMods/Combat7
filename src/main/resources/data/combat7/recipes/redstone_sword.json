@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " L ",
+    " L ",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:sick"
+    },
+    "L": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "combat7:redstone_sword",
+    "count": 1
+  }
+}
