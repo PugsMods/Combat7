@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " L ",
-    " L ",
-    " S "
+    " l ",
+    " l ",
+    " s "
   ],
   "key": {
-    "S": {
-      "item": "minecraft:sick"
+    "s": {
+      "item": "minecraft:stick"
     },
-    "L": {
+    "l": {
       "item": "minecraft:emerald"
     }
   },
