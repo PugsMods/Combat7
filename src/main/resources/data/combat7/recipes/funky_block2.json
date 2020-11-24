@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "combat7:funky_block"
+    }
+  ],
+  "result": {
+    "item": "combat7:funky_gem",
+    "count": 9
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ggg",
+    "ggg",
+    "ggg"
+  ],
+  "key": {
+    "g": {
+      "item": "combat7:funky_gem"
+    }
+  },
+  "result": {
+    "item": "combat7:funky_block",
+    "count": 1
+  }
+}
