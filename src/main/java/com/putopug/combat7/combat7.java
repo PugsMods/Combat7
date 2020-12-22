@@ -2,11 +2,9 @@ package com.putopug.combat7;
 
 import com.putopug.combat7.init.blocks.BlockRegistryHandler;
 import com.putopug.combat7.init.items.ItemRegistryHandler;
-import com.putopug.combat7.init.items.SpeItmRegHand;
+import com.putopug.combat7.init.items.ArmRegHandler;
 import com.putopug.combat7.init.items.ToolRegistryHandler;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ComposterBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -36,7 +34,7 @@ public class combat7
         ItemRegistryHandler.init();
         ToolRegistryHandler.init();
         BlockRegistryHandler.init();
-        SpeItmRegHand.init();
+        ArmRegHandler.init();
 
 
         // Register the setup method for modloading

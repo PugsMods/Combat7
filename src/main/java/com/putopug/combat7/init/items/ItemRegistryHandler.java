@@ -1,7 +1,8 @@
 package com.putopug.combat7.init.items;
 
 import com.putopug.combat7.combat7;
-import com.putopug.combat7.objects.items.SleepingBag;
+//import com.putopug.combat7.objects.items.SleepingBag;
+//import com.putopug.combat7.objects.items.TestItem;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -23,6 +24,6 @@ public class ItemRegistryHandler {
     public static final RegistryObject<Item> FUNKY_GEM = ITEMS.register("funky_gem", ItemBase::new);
     /*                                              DEPRICATED
     ////////public static final RegistryObject<SleepingBag> GEM = ITEMS.register("gem", SleepingBag::new);
-
+    ////////public static final RegistryObject<TestItem> TESTITEM = ITEMS.register("test", TestiItem::new);
     */
 }
