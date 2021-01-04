@@ -6,5 +6,21 @@
   "item.combat7.emerald_sword": "Emerald Sword",
   "item.combat7.redstone_sword": "Redstone Sword",
   "item.combat7.funky_gem": "Funky Gem",
+
+  "item.combat7.lapis_boots": "Lapis Boots",
+  "item.combat7.lapis_leggings": "Lapis Leggings",
+  "item.combat7.lapis_chestplate": "Lapis Chestplate",
+  "item.combat7.lapis_helmet": "Lapis Helmet",
+
+  "item.combat7.emerald_boots": "Emerald Boots",
+  "item.combat7.emerald_leggings": "Emerald Leggings",
+  "item.combat7.emerald_chestplate": "Emerald Chestplate",
+  "item.combat7.emerald_helmet": "Emerald Helmet",
+
+  "item.combat7.redstone_boots": "Redstone Boots",
+  "item.combat7.redstone_leggings": "Redstone Leggings",
+  "item.combat7.redstone_chestplate": "Redstone Chestplate",
+  "item.combat7.redstone_helmet": "Redstone Helmet",
+
   "block.combat7.funky_block": "Funky Block"
 }
