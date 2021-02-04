@@ -15,6 +15,7 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import java.util.*;
 
 @Mod("combat7")
 /*
@@ -48,12 +49,25 @@ public class combat7
 
         instance = this;
     }
+    public void PrintDebugInfo()
+    {
+        LOGGER.warn("COMBAT LOGGER IS CURRENTLY IN ALPHA, BUGS MAY ARISE..");
+        LOGGER.debug("Combat7 Version:");
+        LOGGER.debug("Combat7 McVersion:");
+        LOGGER.debug("Combat7 JEI Support Version:");
+        LOGGER.debug("JEI MC Version:");
+        LOGGER.debug("Combat7 Compilation Time:");
+        LOGGER.debug("--GPU Info--");
+        LOGGER.debug("GPU Vendor:");
+
+    }
 
     private void setup(final FMLCommonSetupEvent event)
     {
         //ComposterBlock.registerCompostable(100, Blocks.DIAMOND_BLOCK);
         // some preinit code
-        LOGGER.warn("Thanks For Using Combat7");
+       //PrintDebugInfo();
+
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
