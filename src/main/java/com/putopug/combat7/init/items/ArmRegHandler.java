@@ -38,29 +38,29 @@ public class ArmRegHandler {
 
             //REDSTONE
     public static final RegistryObject<ArmorItem> REDSTONE_BOOTS = ITEMS.register("redstone_boots",
-            () -> new ArmorItem(ModArmorMaterial.LAPIS, EquipmentSlotType.FEET,
+            () -> new ArmorItem(ModArmorMaterial.REDSTONE, EquipmentSlotType.FEET,
                     new Item.Properties().group(itemGroups.TOOLS).maxDamage(1150)));
     public static final RegistryObject<ArmorItem> REDSTONE_LEGGINGS = ITEMS.register("redstone_leggings",
-            () -> new ArmorItem(ModArmorMaterial.LAPIS, EquipmentSlotType.LEGS,
+            () -> new ArmorItem(ModArmorMaterial.REDSTONE, EquipmentSlotType.LEGS,
                     new Item.Properties().group(itemGroups.TOOLS).maxDamage(1150)));
     public static final RegistryObject<ArmorItem> REDSTONE_CHESTPLATE = ITEMS.register("redstone_chestplate",
-            () -> new ArmorItem(ModArmorMaterial.LAPIS, EquipmentSlotType.CHEST,
+            () -> new ArmorItem(ModArmorMaterial.REDSTONE, EquipmentSlotType.CHEST,
                     new Item.Properties().group(itemGroups.TOOLS).maxDamage(1150)));
     public static final RegistryObject<ArmorItem> REDSTONE_HELMET = ITEMS.register("redstone_helmet",
-            () -> new ArmorItem(ModArmorMaterial.LAPIS, EquipmentSlotType.HEAD,
+            () -> new ArmorItem(ModArmorMaterial.REDSTONE, EquipmentSlotType.HEAD,
                     new Item.Properties().group(itemGroups.TOOLS).maxDamage(1150)));
         //EMERALD
     public static final RegistryObject<ArmorItem> EMERALD_BOOTS = ITEMS.register("emerald_boots",
-            () -> new ArmorItem(ModArmorMaterial.LAPIS, EquipmentSlotType.FEET,
+            () -> new ArmorItem(ModArmorMaterial.EMERALD, EquipmentSlotType.FEET,
                     new Item.Properties().group(itemGroups.TOOLS).maxDamage(3069)));
     public static final RegistryObject<ArmorItem> EMERALD_LEGGINGS = ITEMS.register("emerald_leggings",
-            () -> new ArmorItem(ModArmorMaterial.LAPIS, EquipmentSlotType.LEGS,
+            () -> new ArmorItem(ModArmorMaterial.EMERALD, EquipmentSlotType.LEGS,
                     new Item.Properties().group(itemGroups.TOOLS).maxDamage(3069)));
     public static final RegistryObject<ArmorItem> EMERALD_CHESTPLATE = ITEMS.register("emerald_chestplate",
-            () -> new ArmorItem(ModArmorMaterial.LAPIS, EquipmentSlotType.CHEST,
+            () -> new ArmorItem(ModArmorMaterial.EMERALD, EquipmentSlotType.CHEST,
                     new Item.Properties().group(itemGroups.TOOLS).maxDamage(3069)));
     public static final RegistryObject<ArmorItem> EMERALD_HELMET = ITEMS.register("emerald_helmet",
-            () -> new ArmorItem(ModArmorMaterial.LAPIS, EquipmentSlotType.HEAD,
+            () -> new ArmorItem(ModArmorMaterial.EMERALD, EquipmentSlotType.HEAD,
                     new Item.Properties().group(itemGroups.TOOLS).maxDamage(3069)));
 
 
