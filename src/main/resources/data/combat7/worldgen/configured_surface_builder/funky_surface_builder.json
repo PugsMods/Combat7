@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:default",
+  "config": {
+    "top_material": {
+      "Name": "combat7:funky_block"
+    },
+    "under_material": {
+      "Name": "minecraft:dirt"
+    },
+    "underwater_material": {
+      "Name": "minecraft:brown_concrete"
+    }
+  }
+}

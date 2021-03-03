@@ -17,8 +17,8 @@ public class FunkyBlock extends Block {
         .jumpFactor(10.0F)
         .harvestTool(ToolType.PICKAXE)
         .harvestLevel(4)
-        .func_235838_a_((lightLevel) -> 10)
-        .func_235861_h_()
+        .setLightLevel((lightLevel) -> 10)
+        .setRequiresTool()
 
 
 

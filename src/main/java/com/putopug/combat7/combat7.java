@@ -4,7 +4,13 @@ import com.putopug.combat7.init.blocks.BlockRegistryHandler;
 import com.putopug.combat7.init.items.ItemRegistryHandler;
 import com.putopug.combat7.init.items.ArmRegHandler;
 import com.putopug.combat7.init.items.ToolRegistryHandler;
+import com.putopug.combat7.world.BiomeDummyHolder;
 import net.minecraft.block.Block;
+import net.minecraft.util.RegistryKey;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,6 +24,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.*;
 
 @Mod("combat7")
+@Mod.EventBusSubscriber(modid = combat7.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 /*
 Author : PutoPug
  */
@@ -36,7 +43,7 @@ public class combat7
         ToolRegistryHandler.init();
         BlockRegistryHandler.init();
         ArmRegHandler.init();
-
+        BiomeDummyHolder.init();
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -67,7 +74,7 @@ public class combat7
         //ComposterBlock.registerCompostable(100, Blocks.DIAMOND_BLOCK);
         // some preinit code
        //PrintDebugInfo();
-
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation(combat7.MOD_ID, "funky_land")), 2));
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -83,7 +90,6 @@ public class combat7
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
-    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
@@ -91,4 +97,8 @@ public class combat7
             LOGGER.info("HELLO from Register Block");
         }
     }
+    /*@SubscribeEvent
+    public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event){
+        BiomeRegHandler.registerBiomes();
+    }*/
 }

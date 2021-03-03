@@ -1,0 +1,33 @@
+{
+  "surface_builder": "combat7:funky_surface_builder",
+  "depth": 0.1253,
+  "scale": 0.05332,
+  "temperature": 1,
+  "downfall": 1,
+  "precipitation": "snow",
+  "temperature_modifier": "frozen",
+  "category": "mesa",
+  "player_spawn_friendly": false,
+  "creature_spawn_probability": 0.0345,
+  "effects": {
+    "sky_color": 1588870,
+    "fog_color": 11120828,
+    "water_color": 14400328,
+    "water_fog_color": 13619308,
+    "grass_color": 61183,
+    "foliage_color": 16711782,
+    "grass_color_modifier": "dark_forest"
+  },
+  "starts": [],
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [
+      "minecraft:blackstone_blobs"
+    ],
+    [
+      "minecraft:crimson_forest_vegetation"
+    ]
+  ]
+}
