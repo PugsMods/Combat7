@@ -12,6 +12,9 @@ import java.util.function.Supplier;
 
 import static com.putopug.combat7.combat7.MOD_ID;
 
+//
+//@author PutoPug
+//
 public class BiomeDummyHolder {
     public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, MOD_ID);
     public static void init(){

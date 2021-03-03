@@ -6,9 +6,9 @@ import mezz.jei.api.registration.*;
 import mezz.jei.api.runtime.IJeiRuntime;
 import net.minecraft.util.ResourceLocation;
 
-/*
-Author: PutoPug
-*/
+//
+//@author PutoPug
+//
 @JeiPlugin
 public class Comabt7JEI implements IModPlugin {
     @Override

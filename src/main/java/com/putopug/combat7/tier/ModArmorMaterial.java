@@ -1,11 +1,9 @@
 package com.putopug.combat7.tier;
 
 import com.putopug.combat7.combat7;
-import com.putopug.combat7.init.items.ArmRegHandler;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Items;
-import net.minecraft.item.crafting.ArmorDyeRecipe;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -14,6 +12,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Supplier;
 
+//
+//@author PutoPug
+//
 public enum ModArmorMaterial implements IArmorMaterial {
 
     LAPIS(combat7.MOD_ID + ":lapis", 25, new int[] {3,8,7,3}, 12,

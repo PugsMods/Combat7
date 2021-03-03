@@ -1,15 +1,14 @@
 package com.putopug.combat7;
 
-import com.putopug.combat7.init.blocks.BlockRegistryHandler;
-import com.putopug.combat7.init.items.ItemRegistryHandler;
-import com.putopug.combat7.init.items.ArmRegHandler;
-import com.putopug.combat7.init.items.ToolRegistryHandler;
+import com.putopug.combat7.init.BlockRegistryHandler;
+import com.putopug.combat7.init.ItemRegistryHandler;
+import com.putopug.combat7.init.ArmRegHandler;
+import com.putopug.combat7.init.ToolRegistryHandler;
 import com.putopug.combat7.world.BiomeDummyHolder;
 import net.minecraft.block.Block;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -21,14 +20,13 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import java.util.*;
 
 @Mod("combat7")
 @Mod.EventBusSubscriber(modid = combat7.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-/*
-Author : PutoPug
- */
 
+//
+//@author PutoPug
+//
 public class combat7
 {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -38,7 +36,7 @@ public class combat7
 
     public combat7()
     {
-        //Item Registring
+        //Register mod items, blocks, biomes
         ItemRegistryHandler.init();
         ToolRegistryHandler.init();
         BlockRegistryHandler.init();
@@ -71,10 +69,8 @@ public class combat7
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        //ComposterBlock.registerCompostable(100, Blocks.DIAMOND_BLOCK);
-        // some preinit code
        //PrintDebugInfo();
-        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation(combat7.MOD_ID, "funky_land")), 2));
+       //BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation(combat7.MOD_ID, "funky_land")), 2));
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -88,17 +84,10 @@ public class combat7
         LOGGER.info("HELLO from server starting");
     }
 
-    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
-    // Event bus for receiving Registry Events)
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            // register a new block here
-            LOGGER.info("HELLO from Register Block");
+            LOGGER.info("Registering Combat7");
         }
     }
-    /*@SubscribeEvent
-    public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event){
-        BiomeRegHandler.registerBiomes();
-    }*/
 }

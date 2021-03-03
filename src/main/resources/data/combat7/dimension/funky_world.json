@@ -1,0 +1,105 @@
+{
+  "type": "combat7:funky_world",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": 435346435,
+    "biome_source": {
+      "type": "minecraft:checkerboard",
+      "seed": 565767456754,
+      "scale": 1,
+      "biomes": [
+        "minecraft:giant_tree_taiga",
+        "minecraft:forest",
+        "minecraft:bamboo_jungle_hills",
+        "combat7:funky_land",
+        "minecraft:eroded_badlands",
+        "minecraft:beach",
+        "minecraft:basalt_deltas",
+        "minecraft:jungle_edge",
+        "minecraft:flower_forest",
+        "minecraft:gravelly_mountains",
+        "minecraft:desert_lakes",
+        "minecraft:wooded_mountains",
+        "minecraft:ice_spikes",
+        "minecraft:bamboo_jungle",
+        "minecraft:dark_forest",
+        "minecraft:crimson_forest",
+        "minecraft:end_midlands",
+        "minecraft:end_highlands",
+        "minecraft:desert_hills",
+        "minecraft:mushroom_field_shore",
+        "minecraft:ice_spikes"
+      ]
+    },
+    "settings": {
+      "name": "minecraft:overworld",
+      "bedrock_roof_position": -10,
+      "bedrock_floor_position": 0,
+      "sea_level": 63,
+      "disable_mob_generation": false,
+      "default_block": {
+        "Name": "minecraft:stone"
+      },
+      "default_fluid": {
+        "Name": "minecraft:water",
+        "Properties": {
+          "level": "0"
+        }
+      },
+      "noise": {
+        "height": 256,
+        "density_factor": 1,
+        "density_offset": -0.46875,
+        "size_horizontal": 1,
+        "size_vertical": 2,
+        "simplex_surface_noise": true,
+        "random_density_offset": true,
+        "sampling": {
+          "xz_scale": 1,
+          "y_scale": 1,
+          "xz_factor": 80,
+          "y_factor": 160
+        },
+        "bottom_slide": {
+          "target": -30,
+          "size": 0,
+          "offset": 0
+        },
+        "top_slide": {
+          "target": -10,
+          "size": 3,
+          "offset": 0
+        }
+      },
+      "structures": {
+        "stronghold": {
+          "distance": 1023,
+          "spread": 111,
+          "count": 144
+        },
+        "structures": {
+          "minecraft:bastion_remnant": {
+            "spacing": 10,
+            "separation": 5,
+            "salt": 0
+          },
+          "minecraft:ocean_ruin": {
+            "spacing": 10,
+            "separation": 5,
+            "salt": 0
+          },
+          "minecraft:swamp_hut": {
+            "spacing": 10,
+            "separation": 5,
+            "salt": 0
+          },
+          "minecraft:pillager_outpost": {
+            "spacing": 10,
+            "separation": 5,
+            "salt": 0
+          }
+        }
+      }
+    }
+  }
+}

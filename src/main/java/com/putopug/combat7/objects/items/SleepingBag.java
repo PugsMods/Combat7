@@ -18,7 +18,7 @@
                /\___/                                \ \_\            /\____/
                \/__/                                  \/_/            \_/__/
 package com.putopug.combat7.objects.items;
-import com.putopug.combat7.init.itemGroups;
+import com.putopug.combat7.init.items.itemGroups;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
@@ -28,10 +28,10 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-/*
-Author : PutoPug
- */
-/*
+
+//
+//@author PutoPug
+//
 public class SleepingBag extends Item {
     public SleepingBag() {
         super(new Item.Properties().group(itemGroups.ITEMS).rarity(Rarity.RARE));

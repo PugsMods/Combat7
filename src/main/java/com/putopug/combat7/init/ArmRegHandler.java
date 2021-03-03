@@ -1,7 +1,7 @@
-package com.putopug.combat7.init.items;
+package com.putopug.combat7.init;
 
 import com.putopug.combat7.combat7;
-import com.putopug.combat7.init.itemGroups;
+import com.putopug.combat7.init.items.itemGroups;
 import com.putopug.combat7.tier.*;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
@@ -9,10 +9,10 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-/*
-Author : PutoPug
- */
 
+//
+//@author PutoPug
+//
 public class ArmRegHandler {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, combat7.MOD_ID);

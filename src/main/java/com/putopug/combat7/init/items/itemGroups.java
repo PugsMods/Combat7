@@ -1,11 +1,11 @@
-package com.putopug.combat7.init;
+package com.putopug.combat7.init.items;
 
-import com.putopug.combat7.init.items.ItemRegistryHandler;
+import com.putopug.combat7.init.ItemRegistryHandler;
 import net.minecraft.item.ItemStack;
-/*
-Author : PutoPug
- */
 
+//
+//@author PutoPug
+//
 public class itemGroups {
     public static final net.minecraft.item.ItemGroup TOOLS = new net.minecraft.item.ItemGroup("c7_tools") {
         @Override

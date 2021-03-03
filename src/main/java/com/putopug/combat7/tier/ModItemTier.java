@@ -6,10 +6,9 @@ import net.minecraft.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
 
-/*
-Author : PutoPug
- */
-
+//
+//@author PutoPug
+//
 public enum ModItemTier implements IItemTier {
 
 

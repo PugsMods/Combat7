@@ -5,11 +5,10 @@ import net.minecraft.client.util.InputMappings;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.lwjgl.glfw.GLFW;
-/*
-Author : PutoPug
- */
 
-
+//
+//@author PutoPug
+//
 public class keyboardhelper {
     private static final long WINDOW = Minecraft.getInstance().getMainWindow().getHandle();
     @OnlyIn(Dist.CLIENT)

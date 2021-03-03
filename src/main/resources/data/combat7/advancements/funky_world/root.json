@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "combat7:funky_gem"
+    },
+    "title": "Funky?",
+    "description": "Where are we?",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "entered_funky": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "combat7:funky_land"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "entered_funky"
+    ]
+  ]
+}

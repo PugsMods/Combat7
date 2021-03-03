@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "combat7:funky_block"
+    },
+    "title": "Wait a minute.... §k§k§k§k?",
+    "description": "Obtain a funky block",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "combat7:funky_world/root",
+  "criteria": {
+    "get_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "combat7:funky_block"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_block"
+    ]
+  ]
+}

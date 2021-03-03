@@ -20,7 +20,7 @@
 package com.putopug.combat7.objects.items;
 
 
-import com.putopug.combat7.init.itemGroups;
+import com.putopug.combat7.init.items.itemGroups;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -34,10 +34,9 @@ import com.putopug.combat7.util.helpers.keyboardhelper;
 
 import java.util.List;
 
-/*
-Author : PutoPug
- */
-/*
+//
+//@author PutoPug
+//
 public class TestItem extends Item {
 
     // FIXME: 9/9/2020
