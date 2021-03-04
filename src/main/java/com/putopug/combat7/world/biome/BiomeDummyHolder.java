@@ -1,4 +1,4 @@
-package com.putopug.combat7.world;
+package com.putopug.combat7.world.biome;
 
 import net.minecraft.util.RegistryKey;
 import net.minecraft.world.biome.Biome;
