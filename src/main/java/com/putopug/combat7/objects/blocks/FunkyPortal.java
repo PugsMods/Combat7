@@ -25,6 +25,6 @@ public class FunkyPortal extends Block {
     @Override
     public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
         super.onEntityCollision(state, worldIn, pos, entityIn);
-        entityIn.changeDimension(DimensionType.);
+        //entityIn.changeDimension(DimensionType.);
     }
 }
