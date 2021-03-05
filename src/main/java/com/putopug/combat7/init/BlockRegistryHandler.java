@@ -32,10 +32,10 @@ public class BlockRegistryHandler {
     public static final RegistryObject<Block> FUNKY_BLOCK = BLOCKS.register("funky_block", FunkyBlock::new);
     public static final RegistryObject<Block> SPEED_BLOCK = BLOCKS.register("speed_block", SpeedBlock::new);
     public static final RegistryObject<Block> DIRTEE_BLOCK = BLOCKS.register("dirtee_block", DirteeBlock::new);
-    public static final RegistryObject<CraftoxBlock> CRAFTOX_BLOCK = BLOCKS.register("craftox_block", CraftoxBlock::new);
+    public static final RegistryObject<CraftoxBlock> CRAFTOX = BLOCKS.register("craftox", CraftoxBlock::new);
 
     //BLOCK ITEMS
     public static final RegistryObject<Item> FUNKY_BLOCK_ITEM = ITEMS.register("funky_block", () -> new BlockItemBase(FUNKY_BLOCK.get()));
     public static final RegistryObject<Item> SPEED_BLOCK_ITEM = ITEMS.register("speed_block", () -> new BlockItemBase(SPEED_BLOCK.get()));
-    public static final RegistryObject<Item> CRAFTOX_BLOCK_ITEM = ITEMS.register("craftox_block", () -> new BlockItemBase(CRAFTOX_BLOCK.get()));
+    public static final RegistryObject<Item> CRAFTOX_ITEM = ITEMS.register("craftox", () -> new BlockItemBase(CRAFTOX.get()));
 }

@@ -23,5 +23,8 @@
   "item.combat7.redstone_helmet": "Redstone Helmet",
 
   "block.combat7.funky_block": "Funky Block",
-  "block.combat7.speed_block": "Speed Block™"
+  "block.combat7.speed_block": "Speed Block™",
+
+
+  "container.combat7.craftox": "Craftox Workspace"
 }
