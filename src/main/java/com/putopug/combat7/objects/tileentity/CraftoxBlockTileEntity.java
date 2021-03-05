@@ -1,4 +1,4 @@
-package com.putopug.combat7.objects.tileentity;
+/*package com.putopug.combat7.objects.tileentity;
 
 import com.putopug.combat7.init.TileEntityRegHandler;
 import net.minecraft.block.BlockState;
@@ -132,3 +132,4 @@ public class CraftoxBlockTileEntity extends TileEntity implements ITickableTileE
         return null;
     }
 }
+*/

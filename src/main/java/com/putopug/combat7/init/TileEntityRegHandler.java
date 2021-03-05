@@ -1,7 +1,7 @@
 package com.putopug.combat7.init;
 
 import com.putopug.combat7.combat7;
-import com.putopug.combat7.objects.tileentity.CraftoxBlockTileEntity;
+//import com.putopug.combat7.objects.tileentity.CraftoxBlockTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
@@ -21,5 +21,5 @@ public class TileEntityRegHandler {
         TI.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
-    public static final RegistryObject<TileEntityType<CraftoxBlockTileEntity>> CRAFTOX = TI.register("craftox", () -> TileEntityType.Builder.create(CraftoxBlockTileEntity::new, BlockRegistryHandler.CRAFTOX.get()).build(null));
+    //public static final RegistryObject<TileEntityType<CraftoxBlockTileEntity>> CRAFTOX = TI.register("craftox", () -> TileEntityType.Builder.create(CraftoxBlockTileEntity::new, BlockRegistryHandler.CRAFTOX.get()).build(null));
 }
