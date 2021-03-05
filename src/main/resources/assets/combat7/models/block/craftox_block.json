@@ -1,10 +1,10 @@
 {
 	"textures": {
-		"0": "blocks/barrel_side",
-		"1": "blocks/crafting_table_top",
-		"2": "blocks/iron_block",
-		"3": "blocks/oak_log",
-		"particle": "blocks/barrel_side"
+		"0": "block/barrel_side",
+		"1": "block/crafting_table_top",
+		"2": "block/iron_block",
+		"3": "block/oak_log",
+		"particle": "block/barrel_side"
 	},
 	"elements": [
 		{
