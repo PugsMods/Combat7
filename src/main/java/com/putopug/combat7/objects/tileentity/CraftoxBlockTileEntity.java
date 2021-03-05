@@ -17,6 +17,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.client.model.data.IModelData;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.LazyOptional;
 
 import javax.annotation.Nonnull;
@@ -46,7 +47,11 @@ public class CraftoxBlockTileEntity extends TileEntity implements ITickableTileE
 
     @Override
     public void tick() {
+        boolean dirty = false;
 
+        if(this.world != null && !this.world.isRemote){
+
+        }
     }
 
     @Override
@@ -65,8 +70,25 @@ public class CraftoxBlockTileEntity extends TileEntity implements ITickableTileE
     }
 
     @Override
+    public void read(BlockState state, CompoundNBT nbt) {
+        super.read(state, nbt);
+        if(nbt.contains("CustomName", Constants.NBT.TAG_STRING)){
+            this.customName = ITextComponent.Serializer.getComponentFromJson(nbt.getString("CustomName"));
+        }
+    }
+
+    @Override
     public CompoundNBT serializeNBT() {
         return null;
+    }
+
+    @Override
+    public CompoundNBT write(CompoundNBT compound) {
+        super.write(compound);
+        if(this.customName != null){
+            compound.putString("CustomName",ITextComponent.Serializer.toJson(this.customName));
+        }
+        return compound;
     }
 
     @Override
@@ -98,7 +120,6 @@ public class CraftoxBlockTileEntity extends TileEntity implements ITickableTileE
     public void requestModelDataUpdate() {
 
     }
-
     @Nonnull
     @Override
     public IModelData getModelData() {
