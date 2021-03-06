@@ -2,27 +2,19 @@
 package com.putopug.combat7.objects.blocks;
 
 import com.putopug.combat7.init.items.itemGroups;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.state.DirectionProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.*;
-import net.minecraft.util.math.shapes.IBooleanFunction;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.world.IWorld;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.ToolType;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
 import net.minecraft.world.IBlockReader;
@@ -30,6 +22,10 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.Hand;
+import net.minecraft.util.Direction;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
@@ -39,6 +35,7 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.inventory.container.INamedContainerProvider;
@@ -49,6 +46,8 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
@@ -56,12 +55,9 @@ import net.minecraft.block.Block;
 
 import javax.annotation.Nullable;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.stream.IntStream;
 import java.util.List;
 import java.util.Collections;
-import java.util.stream.Stream;
 
 import io.netty.buffer.Unpooled;
 
@@ -73,88 +69,39 @@ public class CraftoxBlock extends Combat7Stuff.ModElement {
     @ObjectHolder("combat7:craftox")
     public static final Block block = null;
     @ObjectHolder("combat7:craftox")
-    public static final TileEntityType<CraftoxTI> tileEntityType = null;
+    public static final TileEntityType<CustomTileEntity> tileEntityType = null;
     public CraftoxBlock(Combat7Stuff instance) {
-        super(instance, 5);
-        FMLJavaModLoadingContext.get().getModEventBus().register(new CraftoxTIRegHandler());
+        super(instance, 10);
+        FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
     }
 
     @Override
     public void initElements() {
-        elements.blocks.add(() -> new BlockCus());
-        elements.items.add(() -> new BlockItem(block, new Item.Properties().group(itemGroups.BLOCKS)).setRegistryName(block.getRegistryName()));
+        elements.blocks.add(() -> new CustomBlock());
+        elements.items
+                .add(() -> new BlockItem(block, new Item.Properties().group(itemGroups.BLOCKS)).setRegistryName(block.getRegistryName()));
     }
-    private static class CraftoxTIRegHandler {
+    private static class TileEntityRegisterHandler {
         @SubscribeEvent
         public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
-            event.getRegistry().register(TileEntityType.Builder.create(CraftoxTI::new, block).build(null).setRegistryName("craftox"));
+            event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("craftox"));
         }
     }
-
-    public static class BlockCus extends Block {
-        public static final DirectionProperty HOR_FACE = BlockStateProperties.HORIZONTAL_FACING;
-        protected  static final Map<Direction, VoxelShape> SHAPES = new HashMap<Direction,VoxelShape>();
-
-        public BlockCus() {
-            super(Block.Properties.create(Material.WOOD).sound(SoundType.CHAIN).hardnessAndResistance(1.05f, 10.5f).setLightLevel(s -> 1)
-                    .harvestLevel(1).harvestTool(ToolType.AXE).slipperiness(0.7f));
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public void clientLoad(FMLClientSetupEvent event) {
+        RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
+    }
+    public static class CustomBlock extends Block {
+        public CustomBlock() {
+            super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(1f, 10f).setLightLevel(s -> 1).notSolid()
+                    .setOpaque((bs, br, bp) -> false));
             setRegistryName("craftox");
-            this.setDefaultState(this.stateContainer.getBaseState().with(HOR_FACE, Direction.NORTH));
-            runCalc(Stream.of(
-                    Block.makeCuboidShape(0, 14, 0, 16, 17, 16),
-                    Block.makeCuboidShape(0, 0, 0, 16, 1, 16),
-                    Block.makeCuboidShape(13, 1, 0, 16, 14, 3),
-                    Block.makeCuboidShape(0, 1, 0, 3, 14, 3),
-                    Block.makeCuboidShape(0, 1, 13, 3, 14, 16),
-                    Block.makeCuboidShape(13, 1, 13, 16, 14, 16)
-            ).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get());
-
-        }
-        @SuppressWarnings("deprecation")
-        @Override
-        public BlockState mirror(BlockState state, Mirror mirrorIn) {
-            return state.rotate(mirrorIn.toRotation(state.get(HOR_FACE)));
         }
 
         @Override
-        public BlockState rotate(BlockState state, IWorld world, BlockPos pos, Rotation direction) {
-            return state.with(HOR_FACE, direction.rotate(state.get(HOR_FACE)));
-        }
-
-        @Nullable
-        @Override
-        public BlockState getStateForPlacement(BlockItemUseContext context) {
-            return this.getDefaultState().with(HOR_FACE, context.getPlacementHorizontalFacing().getOpposite());
-        }
-
-        @Override
-        protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-            super.fillStateContainer(builder);
-            builder.add(HOR_FACE);
-        }
-
-        @Override
-        public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-            return SHAPES.get(state.get(HOR_FACE));
-        }
-        protected static void calculateShapes(Direction to, VoxelShape shape) {
-            VoxelShape[] buffer = new VoxelShape[] { shape, VoxelShapes.empty() };
-
-            int times = (to.getHorizontalIndex() - Direction.NORTH.getHorizontalIndex() + 4) % 4;
-            for (int i = 0; i < times; i++) {
-                buffer[0].forEachBox((minX, minY, minZ, maxX, maxY, maxZ) -> buffer[1] = VoxelShapes.or(buffer[1],
-                        VoxelShapes.create(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX)));
-                buffer[0] = buffer[1];
-                buffer[1] = VoxelShapes.empty();
-            }
-
-            SHAPES.put(to, buffer[0]);
-        }
-
-        protected void runCalc(VoxelShape shape) {
-            for (Direction direction : Direction.values()) {
-                calculateShapes(direction, shape);
-            }
+        public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
+            return true;
         }
 
         @Override
@@ -181,7 +128,8 @@ public class CraftoxBlock extends Combat7Stuff.ModElement {
 
                     @Override
                     public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-                        return new CraftoxUIGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
+                        return new CraftoxUIGui.GuiContainerMod(id, inventory,
+                                new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
                     }
                 }, new BlockPos(x, y, z));
             }
@@ -201,7 +149,7 @@ public class CraftoxBlock extends Combat7Stuff.ModElement {
 
         @Override
         public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-            return new CraftoxTI();
+            return new CustomTileEntity();
         }
 
         @Override
@@ -215,8 +163,8 @@ public class CraftoxBlock extends Combat7Stuff.ModElement {
         public void onReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean isMoving) {
             if (state.getBlock() != newState.getBlock()) {
                 TileEntity tileentity = world.getTileEntity(pos);
-                if (tileentity instanceof CraftoxTI) {
-                    InventoryHelper.dropInventoryItems(world, pos, (CraftoxTI) tileentity);
+                if (tileentity instanceof CustomTileEntity) {
+                    InventoryHelper.dropInventoryItems(world, pos, (CustomTileEntity) tileentity);
                     world.updateComparatorOutputLevel(pos, this);
                 }
                 super.onReplaced(state, world, pos, newState, isMoving);
@@ -231,16 +179,16 @@ public class CraftoxBlock extends Combat7Stuff.ModElement {
         @Override
         public int getComparatorInputOverride(BlockState blockState, World world, BlockPos pos) {
             TileEntity tileentity = world.getTileEntity(pos);
-            if (tileentity instanceof CraftoxTI)
-                return Container.calcRedstoneFromInventory((CraftoxTI) tileentity);
+            if (tileentity instanceof CustomTileEntity)
+                return Container.calcRedstoneFromInventory((CustomTileEntity) tileentity);
             else
                 return 0;
         }
     }
 
-    public static class CraftoxTI extends LockableLootTileEntity implements ISidedInventory {
-        private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(0, ItemStack.EMPTY);
-        protected CraftoxTI() {
+    public static class CustomTileEntity extends LockableLootTileEntity implements ISidedInventory {
+        private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(16, ItemStack.EMPTY);
+        protected CustomTileEntity() {
             super(tileEntityType);
         }
 
@@ -322,6 +270,8 @@ public class CraftoxBlock extends Combat7Stuff.ModElement {
 
         @Override
         public boolean isItemValidForSlot(int index, ItemStack stack) {
+            if (index == 15)
+                return false;
             return true;
         }
 
@@ -337,6 +287,36 @@ public class CraftoxBlock extends Combat7Stuff.ModElement {
 
         @Override
         public boolean canExtractItem(int index, ItemStack stack, Direction direction) {
+            if (index == 0)
+                return false;
+            if (index == 1)
+                return false;
+            if (index == 2)
+                return false;
+            if (index == 3)
+                return false;
+            if (index == 4)
+                return false;
+            if (index == 5)
+                return false;
+            if (index == 6)
+                return false;
+            if (index == 7)
+                return false;
+            if (index == 8)
+                return false;
+            if (index == 9)
+                return false;
+            if (index == 10)
+                return false;
+            if (index == 11)
+                return false;
+            if (index == 12)
+                return false;
+            if (index == 13)
+                return false;
+            if (index == 14)
+                return false;
             return true;
         }
         private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());

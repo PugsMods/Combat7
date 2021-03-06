@@ -1,7 +1,5 @@
-
 package com.putopug.combat7.gui;
 
-import com.putopug.combat7.Combat7Stuff;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraftforge.items.SlotItemHandler;
@@ -49,7 +47,7 @@ public class CraftoxUIGui extends Combat7Stuff.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
 	public CraftoxUIGui(Combat7Stuff instance) {
-		super(instance, 6);
+		super(instance, 9);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -84,7 +82,7 @@ public class CraftoxUIGui extends Combat7Stuff.ModElement {
 			super(containerType, id);
 			this.entity = inv.player;
 			this.world = inv.player.world;
-			this.internal = new ItemStackHandler(17);
+			this.internal = new ItemStackHandler(16);
 			BlockPos pos = null;
 			if (extraData != null) {
 				pos = extraData.readBlockPos();
@@ -124,45 +122,35 @@ public class CraftoxUIGui extends Combat7Stuff.ModElement {
 			}
 			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 7, 26) {
 			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 7, 44) {
+			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 25, 26) {
 			}));
-			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 25, 26) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return false;
-				}
+			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 43, 26) {
 			}));
-			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 25, 44) {
+			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 61, 26) {
 			}));
-			this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 43, 26) {
+			this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 79, 26) {
 			}));
-			this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 43, 44) {
+			this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 7, 44) {
 			}));
-			this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 61, 26) {
+			this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 25, 44) {
 			}));
-			this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 61, 44) {
+			this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 43, 44) {
 			}));
-			this.customSlots.put(8, this.addSlot(new SlotItemHandler(internal, 8, 7, 62) {
+			this.customSlots.put(8, this.addSlot(new SlotItemHandler(internal, 8, 61, 44) {
 			}));
-			this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 25, 62) {
+			this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 79, 44) {
 			}));
-			this.customSlots.put(10, this.addSlot(new SlotItemHandler(internal, 10, 43, 62) {
+			this.customSlots.put(10, this.addSlot(new SlotItemHandler(internal, 10, 7, 62) {
 			}));
-			this.customSlots.put(11, this.addSlot(new SlotItemHandler(internal, 11, 61, 62) {
+			this.customSlots.put(11, this.addSlot(new SlotItemHandler(internal, 11, 25, 62) {
 			}));
-			this.customSlots.put(12, this.addSlot(new SlotItemHandler(internal, 12, 124, 44) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return false;
-				}
+			this.customSlots.put(12, this.addSlot(new SlotItemHandler(internal, 12, 43, 62) {
 			}));
-			this.customSlots.put(13, this.addSlot(new SlotItemHandler(internal, 13, 79, 26) {
+			this.customSlots.put(13, this.addSlot(new SlotItemHandler(internal, 13, 61, 62) {
 			}));
 			this.customSlots.put(14, this.addSlot(new SlotItemHandler(internal, 14, 79, 62) {
 			}));
-			this.customSlots.put(15, this.addSlot(new SlotItemHandler(internal, 15, 79, 44) {
-			}));
-			this.customSlots.put(16, this.addSlot(new SlotItemHandler(internal, 16, 142, 44) {
+			this.customSlots.put(15, this.addSlot(new SlotItemHandler(internal, 15, 133, 44) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
@@ -193,18 +181,18 @@ public class CraftoxUIGui extends Combat7Stuff.ModElement {
 			if (slot != null && slot.getHasStack()) {
 				ItemStack itemstack1 = slot.getStack();
 				itemstack = itemstack1.copy();
-				if (index < 17) {
-					if (!this.mergeItemStack(itemstack1, 17, this.inventorySlots.size(), true)) {
+				if (index < 16) {
+					if (!this.mergeItemStack(itemstack1, 16, this.inventorySlots.size(), true)) {
 						return ItemStack.EMPTY;
 					}
 					slot.onSlotChange(itemstack1, itemstack);
-				} else if (!this.mergeItemStack(itemstack1, 0, 17, false)) {
-					if (index < 17 + 27) {
-						if (!this.mergeItemStack(itemstack1, 17 + 27, this.inventorySlots.size(), true)) {
+				} else if (!this.mergeItemStack(itemstack1, 0, 16, false)) {
+					if (index < 16 + 27) {
+						if (!this.mergeItemStack(itemstack1, 16 + 27, this.inventorySlots.size(), true)) {
 							return ItemStack.EMPTY;
 						}
 					} else {
-						if (!this.mergeItemStack(itemstack1, 17, 17 + 27, false)) {
+						if (!this.mergeItemStack(itemstack1, 16, 16 + 27, false)) {
 							return ItemStack.EMPTY;
 						}
 					}
@@ -224,11 +212,11 @@ public class CraftoxUIGui extends Combat7Stuff.ModElement {
 		}
 
 		@Override /**
-					 * Merges provided ItemStack with the first avaliable one in the
-					 * container/player inventor between minIndex (included) and maxIndex
-					 * (excluded). Args : stack, minIndex, maxIndex, negativDirection. /!\ the
-					 * Container implementation do not check if the item is valid for the slot
-					 */
+		 * Merges provided ItemStack with the first avaliable one in the
+		 * container/player inventor between minIndex (included) and maxIndex
+		 * (excluded). Args : stack, minIndex, maxIndex, negativDirection. /!\ the
+		 * Container implementation do not check if the item is valid for the slot
+		 */
 		protected boolean mergeItemStack(ItemStack stack, int startIndex, int endIndex, boolean reverseDirection) {
 			boolean flag = false;
 			int i = startIndex;
@@ -344,7 +332,7 @@ public class CraftoxUIGui extends Combat7Stuff.ModElement {
 			this.xSize = 176;
 			this.ySize = 166;
 		}
-		private static final ResourceLocation texture = new ResourceLocation("combat7:textures/craftox_ui.png");
+		private static final ResourceLocation texture = new ResourceLocation("combat7:textures/gui/craftox_ui.png");
 		@Override
 		public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 			this.renderBackground(ms);
@@ -377,7 +365,7 @@ public class CraftoxUIGui extends Combat7Stuff.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-			this.font.drawString(ms, "Craftox", 6, 7, -12829636);
+			this.font.drawString(ms, "Craftox Workspace", 6, 7, -16777216);
 		}
 
 		@Override

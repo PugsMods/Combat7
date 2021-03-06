@@ -1,8 +1,4 @@
 {
   "variants": {
-    "facing=north": { "model": "combat7:block/craftox" },
-    "facing=south": { "model": "combat7:block/craftox", "y": 180 },
-    "facing=west":  { "model": "combat7:block/craftox", "y": 270 },
-    "facing=east":  { "model": "combat7:block/craftox", "y": 90 }
-  }
+    "": { "model": "combat7:block/craftox" }}
 }
