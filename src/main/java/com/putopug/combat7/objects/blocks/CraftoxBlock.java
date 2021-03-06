@@ -65,7 +65,7 @@ import java.util.stream.Stream;
 
 import io.netty.buffer.Unpooled;
 
-import com.putopug.combat7.gui.TestUIGui;
+import com.putopug.combat7.gui.CraftoxUIGui;
 import com.putopug.combat7.Combat7Stuff;
 
 @Combat7Stuff.ModElement.Tag
@@ -181,7 +181,7 @@ public class CraftoxBlock extends Combat7Stuff.ModElement {
 
                     @Override
                     public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-                        return new TestUIGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
+                        return new CraftoxUIGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
                     }
                 }, new BlockPos(x, y, z));
             }
@@ -302,7 +302,7 @@ public class CraftoxBlock extends Combat7Stuff.ModElement {
 
         @Override
         public Container createMenu(int id, PlayerInventory player) {
-            return new TestUIGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+            return new CraftoxUIGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
         }
 
         @Override
