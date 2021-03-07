@@ -1,9 +1,6 @@
 package com.putopug.combat7;
 
-import com.putopug.combat7.init.BlockRegistryHandler;
-import com.putopug.combat7.init.ItemRegistryHandler;
-import com.putopug.combat7.init.ArmRegHandler;
-import com.putopug.combat7.init.ToolRegistryHandler;
+import com.putopug.combat7.init.*;
 import com.putopug.combat7.world.biome.BiomeDummyHolder;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -51,6 +48,7 @@ public class combat7
         BlockRegistryHandler.init();
         ArmRegHandler.init();
         BiomeDummyHolder.init();
+        ContainerRegHandler.init();
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

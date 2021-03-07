@@ -34,4 +34,5 @@ public class BlockRegistryHandler {
     //BLOCK ITEMS
     public static final RegistryObject<Item> FUNKY_BLOCK_ITEM = ITEMS.register("funky_block", () -> new BlockItemBase(FUNKY_BLOCK.get()));
     public static final RegistryObject<Item> SPEED_BLOCK_ITEM = ITEMS.register("speed_block", () -> new BlockItemBase(SPEED_BLOCK.get()));
+    public static final RegistryObject<Item> ITOME_ITEM = ITEMS.register("itome", () -> new BlockItemBase(ITOME.get()));
 }
