@@ -37,7 +37,6 @@ public class ItomeBlock extends Block {
         return null;
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         if(!worldIn.isRemote){
@@ -46,6 +45,6 @@ public class ItomeBlock extends Block {
                 NetworkHooks.openGui((ServerPlayerEntity) player,(ItomeTI) te,pos);
             }
         }
-        return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
+        return ActionResultType.SUCCESS;
     }
 }
