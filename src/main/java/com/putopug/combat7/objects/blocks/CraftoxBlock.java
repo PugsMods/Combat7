@@ -2,6 +2,7 @@
 package com.putopug.combat7.objects.blocks;
 
 import com.putopug.combat7.init.items.itemGroups;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import net.minecraftforge.items.IItemHandler;
@@ -123,7 +124,7 @@ public class CraftoxBlock extends Combat7Stuff.ModElement {
                 NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
                     @Override
                     public ITextComponent getDisplayName() {
-                        return new StringTextComponent("Craftox");
+                        return new TranslationTextComponent("conatiner.combat7.craftox");
                     }
 
                     @Override
