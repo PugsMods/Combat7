@@ -1,5 +1,6 @@
 package com.putopug.combat7.objects.blocks;
 
+import com.putopug.combat7.init.TileEntityRegHandler;
 import com.putopug.combat7.objects.ti.ItomeTI;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -26,25 +27,27 @@ public class ItomeBlock extends Block {
         super(Properties.create(Material.IRON).hardnessAndResistance(12F).sound(SoundType.CHAIN));
     }
 
+
     @Override
     public boolean hasTileEntity(BlockState state) {
-        return false;
+        return true;
     }
 
-    @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return null;
+        return TileEntityRegHandler.ITOME_TI_TYPE.get().create();
     }
 
+    @SuppressWarnings("deprecation")
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-        if(!worldIn.isRemote){
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
+                                             Hand handIn, BlockRayTraceResult hit) {
+        if (!worldIn.isRemote()) {
             TileEntity te = worldIn.getTileEntity(pos);
-            if(te instanceof ItomeTI){
-                NetworkHooks.openGui((ServerPlayerEntity) player,(ItomeTI) te,pos);
+            if (te instanceof ItomeTI) {
+                NetworkHooks.openGui((ServerPlayerEntity) player, (ItomeTI) te, pos);
             }
         }
-        return ActionResultType.SUCCESS;
+        return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
     }
 }

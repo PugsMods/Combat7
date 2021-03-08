@@ -65,10 +65,10 @@ public class ItomeContainer extends Container {
        if(slot != null && slot.getHasStack()){
            ItemStack s1 = slot.getStack();
            stack = s1.copy();
-           if(index < ItomeTI.slts && !this.mergeItemStack(s1, ItomeTI.slts,this.inventorySlots.size(),true)) {
+           if(index < ItomeTI.slots && !this.mergeItemStack(s1, ItomeTI.slots,this.inventorySlots.size(),true)) {
                return ItemStack.EMPTY;
            }
-           if(!this.mergeItemStack(s1, 0,ItomeTI.slts,false)){
+           if(!this.mergeItemStack(s1, 0,ItomeTI.slots,false)){
                return ItemStack.EMPTY;
            }
            if(s1.isEmpty()){
