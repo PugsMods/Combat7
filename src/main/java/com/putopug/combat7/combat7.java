@@ -49,13 +49,9 @@ public class combat7
         ArmRegHandler.init();
         BiomeDummyHolder.init();
 
-        // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
-        // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
         instance = this;
@@ -84,7 +80,6 @@ public class combat7
         elements.getElements().forEach(element -> element.clientLoad(event));
 
     }
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
 
     public static class RegistryEvents {
         @SubscribeEvent
@@ -111,9 +106,7 @@ public class combat7
         }
         @SubscribeEvent
         public void onServerStarting(FMLServerStartingEvent event) {
-            // do something when the server starts
 
-            LOGGER.info("HELLO from server starting");
         }
     }
 
