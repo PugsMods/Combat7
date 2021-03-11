@@ -12,7 +12,7 @@ logoFile="Combat7.png"
 credits="Thanks To PugzAreCute_ For Making This Mod :-)"
 authors="PugzAreCute_"
 description='''
-A Combat Mod
+A Mod... or is it?
 '''
 [[dependencies.combat7]]
     modId="forge"
