@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "ibi",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "combat7:compronium_bus"
+    }
+  },
+  "result": {
+    "item": "combat7:shielded_compronium_bus",
+    "count": 1
+  }
+}

@@ -48,7 +48,6 @@ public class combat7
         BlockRegistryHandler.init();
         ArmRegHandler.init();
         BiomeDummyHolder.init();
-        ContainerRegHandler.init();
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
