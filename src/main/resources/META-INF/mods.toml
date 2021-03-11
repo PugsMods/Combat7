@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[35,)"
-license="All rights reserved"
+license="Gnu General Public License V3"
 issueTrackerURL="https://github.com/PugsMods/Combat7/issues"
 [[mods]]
 modId="combat7"
@@ -8,7 +8,7 @@ version="1.2.3"
 displayName="Combat7"
 updateJSONURL="https://raw.githubusercontent.com/PugsMods/Combat7/master/src/main/java/com/putopug/combat7/update/update.json"
 displayURL="http://www.curseforge.com/minecraft/mc-mods/combat7"
-logoFile="examplemod.png"
+logoFile="Combat7.png"
 credits="Thanks To PugzAreCute_ For Making This Mod :-)"
 authors="PugzAreCute_"
 description='''

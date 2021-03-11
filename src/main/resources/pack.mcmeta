@@ -1,13 +1,6 @@
 {
     "pack": {
         "description": "Combat7 Resources",
-        "pack_format": 5,
-    },
-   "language": {
-      "en_pugs": {
-        "region": "ElPuggaChino",
-        "name": "PugzPoE",
-        "bidirectional": false
-      }
+        "pack_format": 5
     }
 }
