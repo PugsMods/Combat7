@@ -23,13 +23,13 @@ public class ItemRegistryHandler {
 
     //Items
     public static final RegistryObject<Item> FUNKY_GEM = ITEMS.register("funky_gem", ItemBase::new);
-    public static final RegistryObject<Item> COMPRONIUM_BUS = ITEMS.register("compronium_bus", ItemBase::new);
-    public static final RegistryObject<Item> SHIELDED_COMPRONIUM_BUS = ITEMS.register("shielded_compronium_bus", ItemBase::new);
-    public static final RegistryObject<Item> REINFORCED_LEATHER = ITEMS.register("reinforced_leather", ItemBase::new);
-    public static final RegistryObject<Item> LATCH = ITEMS.register("locking_latch", ItemBase::new);
-    public static final RegistryObject<Item> BUS_CONNECTOR = ITEMS.register("bus_connector", ItemBase::new);
     /*                                              DEPRICATED
-    ////////public static final RegistryObject<SleepingBag> GEM = ITEMS.register("gem", SleepingBag::new);
-    ////////public static final RegistryObject<TestItem> TESTITEM = ITEMS.register("test", TestiItem::new);
+        public static final RegistryObject<SleepingBag> GEM = ITEMS.register("gem", SleepingBag::new);
+        public static final RegistryObject<TestItem> TESTITEM = ITEMS.register("test", TestiItem::new);
+        public static final RegistryObject<Item> COMPRONIUM_BUS = ITEMS.register("compronium_bus", ItemBase::new);
+        public static final RegistryObject<Item> SHIELDED_COMPRONIUM_BUS = ITEMS.register("shielded_compronium_bus", ItemBase::new);
+        public static final RegistryObject<Item> REINFORCED_LEATHER = ITEMS.register("reinforced_leather", ItemBase::new);
+        public static final RegistryObject<Item> LATCH = ITEMS.register("locking_latch", ItemBase::new);
+        public static final RegistryObject<Item> BUS_CONNECTOR = ITEMS.register("bus_connector", ItemBase::new);
     */
 }
