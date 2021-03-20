@@ -22,7 +22,9 @@ public enum ModArmorMaterial implements IArmorMaterial {
     REDSTONE(combat7.MOD_ID + ":redstone", 25, new int[] {4,7,9,4}, 11,
     SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.1F, () -> { return Ingredient.fromItems(Items.LAPIS_LAZULI); },0.1F),
     EMERALD(combat7.MOD_ID + ":emerald", 25, new int[] {6,9,11,6}, 69,
-    SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.1F, () -> { return Ingredient.fromItems(Items.LAPIS_LAZULI); },0.1F);
+    SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.1F, () -> { return Ingredient.fromItems(Items.LAPIS_LAZULI); },0.1F),
+    DIRT(combat7.MOD_ID + ":dirt", 25, new int[] {1,3,2,1}, 1,
+    SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.07F, () -> { return Ingredient.fromItems(Items.DIRT); },0.05F);
 
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[] { 13, 15, 16, 11};
