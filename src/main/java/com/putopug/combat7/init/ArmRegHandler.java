@@ -62,6 +62,19 @@ public class ArmRegHandler {
     public static final RegistryObject<ArmorItem> EMERALD_HELMET = ITEMS.register("emerald_helmet",
             () -> new ArmorItem(ModArmorMaterial.EMERALD, EquipmentSlotType.HEAD,
                     new Item.Properties().group(itemGroups.TOOLS).maxDamage(3069)));
+    //DIRT
+    public static final RegistryObject<ArmorItem> DIRT_BOOTS = ITEMS.register("dirt_boots",
+            () -> new ArmorItem(ModArmorMaterial.DIRT, EquipmentSlotType.FEET,
+                    new Item.Properties().group(itemGroups.TOOLS).maxDamage(69)));
+    public static final RegistryObject<ArmorItem> DIRT_LEGGINGS = ITEMS.register("dirt_leggings",
+            () -> new ArmorItem(ModArmorMaterial.DIRT, EquipmentSlotType.LEGS,
+                    new Item.Properties().group(itemGroups.TOOLS).maxDamage(69)));
+    public static final RegistryObject<ArmorItem> DIRT_CHESTPLATE = ITEMS.register("dirt_chestplate",
+            () -> new ArmorItem(ModArmorMaterial.DIRT, EquipmentSlotType.CHEST,
+                    new Item.Properties().group(itemGroups.TOOLS).maxDamage(69)));
+    public static final RegistryObject<ArmorItem> DIRT_HELMET = ITEMS.register("dirt_helmet",
+            () -> new ArmorItem(ModArmorMaterial.DIRT, EquipmentSlotType.HEAD,
+                    new Item.Properties().group(itemGroups.TOOLS).maxDamage(69)));
 
 
 

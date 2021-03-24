@@ -42,12 +42,13 @@ public class combat7
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         MinecraftForge.EVENT_BUS.register(new Combat7FMLBusEvents(this));
-        //Register mod items, blocks, biomes
+        //Register mod items, blocks, biomes, etc..
         ItemRegistryHandler.init();
         ToolRegistryHandler.init();
         BlockRegistryHandler.init();
         ArmRegHandler.init();
         BiomeDummyHolder.init();
+        EntityRegHandler.init();
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);

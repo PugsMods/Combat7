@@ -17,6 +17,7 @@
     \/___/  `/___/> \   \/_/  \/___/   \/__/\/___/  \ \ \/  \/___/  \/___L\ \
                /\___/                                \ \_\            /\____/
                \/__/                                  \/_/            \_/__/
+
 package com.putopug.combat7.objects.items;
 
 
@@ -50,7 +51,6 @@ public class TestItem extends Item {
     {
         return true;
     }
-
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
     {
@@ -64,6 +64,7 @@ public class TestItem extends Item {
         }
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
+
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
@@ -84,8 +85,5 @@ public class TestItem extends Item {
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 
-
     }
-
-
 */
