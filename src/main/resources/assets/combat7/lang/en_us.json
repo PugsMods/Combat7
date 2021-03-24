@@ -28,5 +28,7 @@
 
   "block.combat7.craftox": "Craftox Workspace",
   "container.combat7.itome": "Itome",
-  "conatiner.combat7.craftox": "Craftox Workspace"
+  "conatiner.combat7.craftox": "Craftox Workspace",
+
+  "entity.combat7.hamster": "Hamster"
 }

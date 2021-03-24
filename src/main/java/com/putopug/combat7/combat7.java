@@ -1,9 +1,11 @@
 package com.putopug.combat7;
 
 import com.putopug.combat7.init.*;
-import com.putopug.combat7.objects.entities.HamsterRenderer;
+import com.putopug.combat7.objects.entities.PugEntity;
+import com.putopug.combat7.objects.entities.PugRenderer;
 import com.putopug.combat7.world.biome.BiomeDummyHolder;
 import net.minecraft.block.Block;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -74,6 +76,10 @@ public class combat7
 
     private void setup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            GlobalEntityTypeAttributes.put(EntityRegHandler.PUG.get(), PugEntity.registerAttributes().create());
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegHandler.PUG.get(), PugRenderer::new);
         elements.getElements().forEach(element -> element.init(event));
        //PrintDebugInfo();
        //BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation(combat7.MOD_ID, "funky_land")), 2));
