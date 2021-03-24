@@ -1,6 +1,7 @@
 package com.putopug.combat7;
 
 import com.putopug.combat7.init.*;
+import com.putopug.combat7.objects.entities.HamsterRenderer;
 import com.putopug.combat7.world.biome.BiomeDummyHolder;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -8,6 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -79,7 +81,6 @@ public class combat7
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         elements.getElements().forEach(element -> element.clientLoad(event));
-
     }
 
     public static class RegistryEvents {
