@@ -1,5 +1,6 @@
 package com.putopug.combat7.objects.blocks;
 
+import com.putopug.combat7.world.dimension.Combat7Dimensions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
@@ -30,6 +31,7 @@ public class DirteeBlock extends Block {
     @SuppressWarnings("deprecation")
     public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
         entityIn.attackEntityFrom(DamageSource.CACTUS, 2.0F);
+        //entityIn.changeDimension(Combat7Dimensions.FUNKY_WORLD);
     }
 
     @Override
@@ -47,5 +49,4 @@ public class DirteeBlock extends Block {
     public boolean allowsMovement(BlockState state, IBlockReader worldIn, BlockPos pos, PathType type) {
         return false;
     }
-
 }
