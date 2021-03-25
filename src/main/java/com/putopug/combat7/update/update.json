@@ -1,12 +1,13 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/combat7",
   "promos": {
-    "1.16.4-latest": "1.2.3",
+    "1.16.4-latest": "1.2.4BETA",
     "1.16.4-recommended": "1.2.3",
     "1.16.1-latest": "1.2.3BETA",
     "1.16.1-recommended": "1.2.2"
   },
   "1.16.4": {
+    "1.2.4BETA": "More Mobs, SOme tweaks to biomes and more!",
     "1.2.3": "Fixed armor textures!"
   },
   "1.16.1": {
