@@ -1,4 +1,4 @@
-package com.putopug.combat7.objects.entities;
+package com.putopug.combat7.objects.entities.hamster;
 
 import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.EntityType;
@@ -14,9 +14,9 @@ import net.minecraft.world.World;
 /*
  * @author: PutoPug
  */
-public class PugEntity extends CreatureEntity {
+public class HamsterEntity extends CreatureEntity {
 
-    public PugEntity(EntityType<PugEntity> type, World worldIn) {
+    public HamsterEntity(EntityType<HamsterEntity> type, World worldIn) {
         super(type, worldIn);
     }
     public static AttributeModifierMap.MutableAttribute registerAttributes() {

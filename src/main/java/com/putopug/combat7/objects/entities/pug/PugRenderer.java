@@ -1,4 +1,4 @@
-package com.putopug.combat7.objects.entities;
+package com.putopug.combat7.objects.entities.pug;
 
 import com.putopug.combat7.combat7;
 import net.minecraft.client.renderer.entity.EntityRendererManager;

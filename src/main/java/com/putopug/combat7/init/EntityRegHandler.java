@@ -1,7 +1,8 @@
 package com.putopug.combat7.init;
 
 import com.putopug.combat7.combat7;
-import com.putopug.combat7.objects.entities.PugEntity;
+import com.putopug.combat7.objects.entities.hamster.HamsterEntity;
+import com.putopug.combat7.objects.entities.pug.PugEntity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
@@ -22,6 +23,10 @@ public class EntityRegHandler {
     }
     public static final RegistryObject<EntityType<PugEntity>> PUG = ENTITIES
             .register("pug",() -> EntityType.Builder.<PugEntity>create(PugEntity::new, EntityClassification.CREATURE)
-                    .size(0.9f,1.9f)
+                    .size(0.7f,0.9f)
                     .build(new ResourceLocation(combat7.MOD_ID, "pug").toString()));
+    public static final RegistryObject<EntityType<HamsterEntity>> HAMSTER = ENTITIES
+            .register("hamster",() -> EntityType.Builder.<HamsterEntity>create(HamsterEntity::new, EntityClassification.CREATURE)
+                    .size(0.15f,0.15f)
+                    .build(new ResourceLocation(combat7.MOD_ID, "hamster").toString()));
 }
