@@ -23,10 +23,10 @@ public class EntityRegHandler {
     }
     public static final RegistryObject<EntityType<PugEntity>> PUG = ENTITIES
             .register("pug",() -> EntityType.Builder.<PugEntity>create(PugEntity::new, EntityClassification.CREATURE)
-                    .size(0.7f,0.9f)
+                    .size(0.5f,0.9f)
                     .build(new ResourceLocation(combat7.MOD_ID, "pug").toString()));
     public static final RegistryObject<EntityType<HamsterEntity>> HAMSTER = ENTITIES
             .register("hamster",() -> EntityType.Builder.<HamsterEntity>create(HamsterEntity::new, EntityClassification.CREATURE)
-                    .size(0.15f,0.15f)
+                    .size(0.2f,0.25f)
                     .build(new ResourceLocation(combat7.MOD_ID, "hamster").toString()));
 }
