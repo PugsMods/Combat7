@@ -4,11 +4,14 @@ import com.putopug.combat7.init.*;
 import com.putopug.combat7.objects.entities.hamster.HamsterRenderer;
 import com.putopug.combat7.objects.entities.pug.PugEntity;
 import com.putopug.combat7.objects.entities.pug.PugRenderer;
-import com.putopug.combat7.world.biome.BiomeDummyHolder;
+import com.putopug.combat7.init.BiomeDummyHolder;
 import net.minecraft.block.Block;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.Item;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -85,7 +88,7 @@ public class combat7
         RenderingRegistry.registerEntityRenderingHandler(EntityRegHandler.PUG.get(), PugRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityRegHandler.HAMSTER.get(), HamsterRenderer::new);
         elements.getElements().forEach(element -> element.init(event));
-       //BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation(combat7.MOD_ID, "funky_land")), 2));
+       BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(RegistryKey.getOrCreateKey(Registry.BIOME_KEY, new ResourceLocation(combat7.MOD_ID, "moziac")), 2));
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

@@ -1,0 +1,52 @@
+{
+  "surface_builder": "combat7:islands_surface_builder",
+  "depth": 0.293,
+  "scale": 0.1,
+  "temperature": 0.9,
+  "downfall": 0.5,
+  "precipitation": "snow",
+  "temperature_modifier": "none",
+  "category": "extreme_hills",
+  "player_spawn_friendly": false,
+  "creature_spawn_probability": 0.193,
+  "effects": {
+    "sky_color": 7907327,
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "grass_color_modifier": "dark_forest"
+  },
+  "starts": [
+    "minecraft:shipwreck_beached",
+    "minecraft:pillager_outpost",
+    "minecraft:ruined_portal",
+    "minecraft:village_savanna",
+    "minecraft:buried_treasure",
+    "minecraft:desert_pyramid"
+  ],
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave"
+    ],
+    "liquid": [
+      "minecraft:underwater_cave"
+    ]
+  },
+  "features": [
+    [
+      "minecraft:ore_redstone",
+      "minecraft:ore_iron",
+      "minecraft:ore_emerald",
+      "minecraft:ore_lapis",
+      "minecraft:ore_diamond",
+      "minecraft:ore_gold",
+      "minecraft:ore_debris_large",
+      "minecraft:ore_coal",
+      "minecraft:bamboo",
+      "minecraft:trees_giant_spruce",
+      "minecraft:blackstone_blobs"
+    ]
+  ]
+}

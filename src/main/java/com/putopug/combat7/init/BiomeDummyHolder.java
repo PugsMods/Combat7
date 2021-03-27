@@ -1,4 +1,4 @@
-package com.putopug.combat7.world.biome;
+package com.putopug.combat7.init;
 
 import net.minecraft.util.RegistryKey;
 import net.minecraft.world.biome.Biome;
@@ -24,6 +24,7 @@ public class BiomeDummyHolder {
     // No static variable to hold as these dummy biomes should NOT be held and referenced elsewhere.
     static {
         createBiome("funky_land", BiomeMaker::makeSavannaPlateauBiome);
+        createBiome("moziac", BiomeMaker::makeJungleHillsBiome);
     }
     public static RegistryObject<Biome> createBiome(String name, Supplier<Biome> biome) {
         return BIOMES.register(name, biome);
