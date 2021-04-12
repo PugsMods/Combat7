@@ -27,11 +27,11 @@ public class BlockRegistryHandler {
 
     //BLOCKS
     public static final RegistryObject<Block> FUNKY_BLOCK = BLOCKS.register("funky_block", FunkyBlock::new);
-    public static final RegistryObject<Block> SPEED_BLOCK = BLOCKS.register("speed_block", SpeedBlock::new);
+    //public static final RegistryObject<Block> SPEED_BLOCK = BLOCKS.register("speed_block", SpeedBlock::new);
     public static final RegistryObject<Block> DIRTEE_BLOCK = BLOCKS.register("dirtee_block", DirteeBlock::new);
 
     //BLOCK ITEMS
     public static final RegistryObject<Item> FUNKY_BLOCK_ITEM = ITEMS.register("funky_block", () -> new BlockItemBase(FUNKY_BLOCK.get()));
-    public static final RegistryObject<Item> SPEED_BLOCK_ITEM = ITEMS.register("speed_block", () -> new BlockItemBase(SPEED_BLOCK.get()));
+    //public static final RegistryObject<Item> SPEED_BLOCK_ITEM = ITEMS.register("speed_block", () -> new BlockItemBase(SPEED_BLOCK.get()));
     public static final RegistryObject<Item> DIRTEE_BLOCK_ITEM = ITEMS.register("dirtee_block", () -> new BlockItemBase(DIRTEE_BLOCK.get()));
     }
