@@ -13,7 +13,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '1.2.3'
-group = 'com.putopug.combat7'
+group = 'com.putopug'
 archivesBaseName = 'combat7'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
@@ -88,11 +88,11 @@ jar {
     manifest {
         attributes([
             "Specification-Title": "Combat7",
-            "Specification-Vendor": "putopug",
+            "Specification-Vendor": "PugsMods",
             "Specification-Version": "1",
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"Putopug",
+            "Implementation-Vendor" :"PugsMods",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
